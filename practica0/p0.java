@@ -269,36 +269,3 @@ public class p0 {
 
 
 
-/*
-     CONFIGURAR MI CUENTA DE GIT EN LA COMPU
-     INSTALAR BASH Y CORRER EL COMANDO --> git config --global user.name (poner entre comillas nombre completo)
-     CORRER EL COMANDO --> git config --global user.email (poner entre comillas email)
-     Hacer un repo en github y seguir el paso a paso de creacion de repo (importante inicializarlo en la carpeta correcta, no en escritorio por ej)
-     git remote add origin <link del repo que da github>
-     git status --> Los archivos que estan en rojo es porque no estan siendo trackeados por git (no está siguiendo sus cambios)
-     git add .  --> agrega todas los archivos y subdirectorios en el directorio
-     git commit -m "" --> es la manera de confirmar los cambios en el repo; entre comillas el mensaje de que se cambio en el doc; corto e impropio
-     lo que se graba con commit solo se hace localmente
-     git push --set-upstream origin main --> De esta forma se carga todo el proyecto (revisar)
-     git push -u origin main --> La forma normal de subir los cambios del commit
-*/
-
-/*
-    Para copiar un repo, abrirlo en github, copiar el link que figura en el desplegable "Code", abrir bash en la carpeta donde quiero "pegarlo"/descargarlo y poner "git clone <link de descarga>
-*
-*
-
-    En JAVA los tipos primitivos tienen valores predeterminados
-    --> int = 0
-    --> boolean = false
-    --> string = null
-    --> int[] (arreglos) = null
-    --> char[] (arreglos) = null
-
-    Un arreglo se inicializa --> cuenta = new int[4];
-    esto crea un arreglo de 4 ints pero sin valores asignados, por lo que se inicializan con ceros
-
-    ALIASING --> PREGUNTA DE PARCIAL --> Es cuando dos variables referencian al mismo objeto (son dos nombres para una misma direccion de memoria)
-    Esto suele pasar cuando se quieren copiar arreglos; en vez de hacer int[] b = a; siendo a un arreglo, se tiene que hacer int[] b = a.clone();
-        o copiar "manualmente" los valores con un for
-* */
