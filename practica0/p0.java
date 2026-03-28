@@ -248,7 +248,6 @@ public class p0 {
         }
         return false;
     }
-
     static int maximo(int[] a) {
         int answer = 0;
         for (int i = 0; i < a.length; i++) {
@@ -258,11 +257,77 @@ public class p0 {
         }
         return answer;
     }
+    static int maximoIndice(int[] a) {
+        int answer = 0;
+        int answerIndex = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > answer) {
+                answer = a[i];
+                answerIndex = i;
+            }
+        }
+        return answerIndex;
+    }
+    static int suma(int[] a) {
+        int answer = 0;
+        for (int i = 0; i < a.length; i++) {
+            answer += a[i];
+        }
+        return answer;
+    }
+    static boolean estaOrdenado(int[] a) {
+        int matches = 0;
+        for (int i = 0; i < a.length-1; i++) {
+            if (a[i+1] <= a[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+    static double promedio(double[] a) {
+        double sum = 0;
 
+        for (int i = 0; i < a.length; i++) {
+            sum += a[i];
+        }
+        return sum/a.length;
+    }
+    static int sumatoriaRec(int n) {
+        if (n == 0){
+            return 0;
+        } else {
+            return n + sumatoriaRec(n-1);
+        }
+    }
+    static int sumatoriaParesRec(int n) {
+        if (n == 0){
+            return 0;
+        }else if (n % 2 == 0) {
+            return n + sumatoriaParesRec(n-2);
+        } else{
+            return sumatoriaParesRec(n-1);
+        }
+    }
+    static int potenciaRec(double x, int n) {
+        if (n == 0){
+            return 1;
+        }else {
+            return (int) x * potenciaRec(x, n-1);
+        }
+    }
+
+    static int factorialRec(int n) {
+        if (n == 0){
+            return 1;
+        } else {
+            return n * factorialRec(n-1);
+        }
+    }
 
 
     static void main(String[] args) {
-        System.out.println(puedeColocarse("aaaaaa", "bbbbaba","aa"));
+        double[] n = {26,25};
+        System.out.println(factorialRec(4));
     }
 // =========== MAIN ===========
 }
