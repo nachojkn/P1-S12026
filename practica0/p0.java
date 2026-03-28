@@ -315,7 +315,6 @@ public class p0 {
             return (int) x * potenciaRec(x, n-1);
         }
     }
-
     static int factorialRec(int n) {
         if (n == 0){
             return 1;
@@ -324,10 +323,20 @@ public class p0 {
         }
     }
 
+    static int fibrec(int n) {
+        if (n == 0){
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        } else {
+            return fibrec(n-2) + fibrec(n-1);
+        }
+    }
+
 
     static void main(String[] args) {
         double[] n = {26,25};
-        System.out.println(factorialRec(4));
+        System.out.println(fibrec(7));
     }
 // =========== MAIN ===========
 }
