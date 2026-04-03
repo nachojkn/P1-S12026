@@ -333,10 +333,42 @@ public class p0 {
         }
     }
 
+    static int fibiter(int n) {
+        int fib = 0;
+        int fibi = 1;
+        for (int i = 1; i < n; i++) {
+            fib = fibi + fib;
+            fibi = fib;
+        } //mal
+        return fib;
+    }
+
+    static void collatz(int n) {
+        if (n == 1){
+            System.out.println("Collatz end");
+        }else if (n % 2 == 0){
+            System.out.println(n/2);
+            collatz(n/2);
+        } else if (n % 2 == 1) {
+            System.out.println(3 * n + 1);
+            collatz(3*n+1);
+        }
+    }
+
+    static int mcd(int a, int b) {
+        if (b == 0){
+            return a;
+        } else {
+            int r = a % b;
+            return mcd(b, r);
+        }
+    }
+
+    
 
     static void main(String[] args) {
         double[] n = {26,25};
-        System.out.println(fibrec(7));
+        System.out.println(mcd(36, 20));
     }
 // =========== MAIN ===========
 }
