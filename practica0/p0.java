@@ -220,6 +220,7 @@ public class p0 {
         }
         return cont == text.length();
     }
+
     static String sinRepetidos(String text) {
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
@@ -364,11 +365,59 @@ public class p0 {
         }
     }
 
+    static String resto(String word) {
+        return word.substring(1, word.length()-1);
+    }
+
+    static void ej34(String text) {
+        // Hecho sin resto
+        String ans = "";
+        for (int i = 0; i < text.length()-1; i++) {
+            ans += text.charAt(i) + "*";
+        }
+        ans += text.charAt(text.length()-1);
+        System.out.println(ans);
+    }
+
+    static String ej35(String text) {
+        String ans = text.charAt(0)+"";
+        for (int i = 1; i < text.length()-1; i++) {
+            if ((text.charAt(i) != text.charAt(i + 1)) && text.charAt(i) != ans.charAt(ans.length() - 1)) {
+                ans += text.charAt(i);
+            } else if (text.charAt(i+1) != ans.charAt(ans.length() - 1)) {
+                ans += text.charAt(i+1);
+            }
+        }
+        return ans;
+    }
+
+    static int sumarUnoHasta(int n) {
+        if (n == 1){
+            return n;
+        }else {
+            return n + sumarUnoHasta(n-1);
+        }
+    }
+
+    static int sumarEntre(int n1, int n2) {
+        if(n1 == n2){
+            return n1;
+        } else if(n1 < n2){
+            return  n2 + sumarEntre(n1, n2-1);
+        } else {
+            return  n1 + sumarEntre(n1-1, n2);
+        }
+    }
+
+
     
+
+
+// =========== MAIN ===========
 
     static void main(String[] args) {
         double[] n = {26,25};
-        System.out.println(mcd(36, 20));
+        System.out.println(sumarEntre(4, 2));
     }
 // =========== MAIN ===========
 }
