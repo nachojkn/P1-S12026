@@ -366,7 +366,7 @@ public class p0 {
     }
 
     static String resto(String word) {
-        return word.substring(1, word.length()-1);
+        return word.substring(1);
     }
 
     static void ej34(String text) {
@@ -381,14 +381,31 @@ public class p0 {
 
     static String ej35(String text) {
         String ans = text.charAt(0)+"";
-        for (int i = 1; i < text.length()-1; i++) {
+        /*for (int i = 1; i < text.length()-1; i++) {
             if ((text.charAt(i) != text.charAt(i + 1)) && text.charAt(i) != ans.charAt(ans.length() - 1)) {
                 ans += text.charAt(i);
             } else if (text.charAt(i+1) != ans.charAt(ans.length() - 1)) {
                 ans += text.charAt(i+1);
             }
+        }*/
+        int txtLen =  text.length();
+        for (int i = 1; i < txtLen-1; i++) {
+            if (ans.charAt(ans.length()-1) != resto(text).charAt(0)) {
+                ans += resto(text).charAt(0);
+            }
+            text = resto(text);
         }
+
         return ans;
+
+    }
+
+    static String reverseRecursive(String text) {
+        if(text.isEmpty()){
+            return "";
+        } else{
+            return reverseRecursive(resto(text)) + text.charAt(0);
+        }
     }
 
     static int sumarUnoHasta(int n) {
@@ -409,15 +426,68 @@ public class p0 {
         }
     }
 
+    static void imprimirUnoHasta(int n){
+        while(n>=1){
+            System.out.println(n);
+            n -= 1;
+        }
+    }
 
-    
+    static int prodCifras(int n) {
+        if(n % 10 == 0 && n < 10){
+            return n;
+        } else if(n % 10 != 0){
+            return (n%10) * prodCifras(n/10);
+        } else {
+            return prodCifras(n/10);
+        }
+    }
 
+    static String estaPrimera(String s1, String s2) {
+        if(s1.isEmpty()) {
+            return s1;
+        } else if(s2.isEmpty()) {
+            return s2;
+        } else if (s1.charAt(0) < s2.charAt(0)){
+            return s1;
+        } else if (s1.charAt(0) > s2.charAt(0)) {
+            return s2;
+        } else {
+            return s1.charAt(0) + estaPrimera(resto(s1), resto(s2));
+        }
+    }
+
+    static String imprimirEspaciado(String text) {
+        if (text.length() == 1){
+            return text;
+        }else {
+            return text.charAt(0) + " " + imprimirEspaciado(resto(text));
+        }
+    }
+
+    static String rotacion(String s, int n) {
+        if (n == 0){
+            return s;
+        } else {
+            return rotacion(resto(s) + s.charAt(0), n-1);
+        }
+    }
+
+
+    static String[] restoArreglos(String[] arreglo) {
+        String[] newArray =  new String[arreglo.length -1];
+        for (int i = 1; i < arreglo.length; i++) {
+            newArray[i-1] = arreglo[i];
+        }
+        return newArray;
+    }
 
 // =========== MAIN ===========
 
     static void main(String[] args) {
         double[] n = {26,25};
-        System.out.println(sumarEntre(4, 2));
+        System.out.println(rotacion("siempre", 3));
+
     }
 // =========== MAIN ===========
 }
