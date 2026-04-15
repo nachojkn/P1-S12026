@@ -3,6 +3,8 @@ package practica1_Objetos;
 import java.awt.*;
 
 
+
+
 public class p1Obj {
     /*
     *
@@ -22,7 +24,7 @@ public class p1Obj {
     * ALIASING --> PREGUNTA DE PARCIAL --> Se le llama aliasing a la situacion donde dos variables referencian a un mismo objeto
     *
     * PREGUNTA DE PARCIAL --> Cual es la diferencia entre comparar variables con "==" y ".equals()"??
-    *   --> == Compara direcciones de memoria; .equals() compara los valores dentro de estas variables
+    *   --> == Cuando se comparan intancias/valores de tipos complejos, en realidad compara direcciones de memoria; .equals() compara los valores dentro de estas variables
     * Caso particular, en una situacion de aliasing p1 == p2 arrojaría true (si estas son las variables que apuntan a un mismo objeto)
     *
     *
@@ -37,6 +39,8 @@ public class p1Obj {
     *
     * */
 
+
+
     static double distancia(Point p1, Point p2) {
         double distX = p1.x - p2.x;
         double distY = p1.y - p2.y;
@@ -49,10 +53,16 @@ public class p1Obj {
         return distancia(p1, p2);
     }
 
+    static Point centro(Rectangle rec) {
+        double centroX = rec.x + rec.width / 2.0;
+        double centroY = rec.y + rec.height / 2.0;
+        return new Point((int)centroX, (int)centroY);
+    }
+
     static void main() {
         // Point p1 = new Point(2,2);
         // Point p2 = new Point(3,3);
-        Rectangle rec = new Rectangle(1,1);
-        System.out.println(diagonal(rec));
+        Rectangle rec = new Rectangle(6,3);
+        System.out.println("s");
     }
 }
