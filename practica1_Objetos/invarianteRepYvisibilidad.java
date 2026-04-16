@@ -14,10 +14,12 @@ public class invarianteRepYvisibilidad {
     *
     * Visibilidad
     * La visibilidad de una variable es "desde donde" se puede ver o acceder a una variable
-    * - public (accesible desde cualquier parte del proyecto)
-    * - private (sólo desde denro de la clase)
-    * - package (accesible solo desde clases que esten dentro del mismo paquete -valor default-)
-    * -proected accesible desde la misma clase y cualquiera de sus subclases
+    *
+    * MODIFICADORES DE VISIBILIDAD:
+    * - public: visible desde cualquier parte del proyecto
+    * - private: visible sólo desde dentro de la clase
+    * - package: -valor default- visible solo desde clases que esten dentro del mismo paquete
+    * - proected: visible desde la misma clase y cualquiera de sus subclases
     *
     *  ---> Ver SETers y GETers
     *
