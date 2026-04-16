@@ -22,6 +22,7 @@ public class invarianteRepYvisibilidad {
     * - proected: visible desde la misma clase y cualquiera de sus subclases
     *
     *  ---> Ver SETers y GETers
+    * ---->>>>>> DENTRO DE LA CLASE, CON CLICK DERECHO > GENERAR... > Se pueden crear los getters y setters que queramos automaticamente
     *
     * La visibilidad se restringe para evitar que se modifiquen las variables de instancia de un objeto
     * Sin estas restricciones podría ocurrir que los objetos que fueron modificados no cumplan con su invariante de representacion
