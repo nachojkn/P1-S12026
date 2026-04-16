@@ -79,20 +79,40 @@ public class ejemploFecha {
 
 
 
-
-
-
     public static void main(){
-        ejemploFecha f = new ejemploFecha(31,12,2001);
-        ejemploFecha f2 = new ejemploFecha(11,1,2000);
-        //System.out.println(f.esVerano());
-        //System.out.println(diasDelMes(4, 2024));
-        //System.out.println(f.antesQue(f2));
-        f.imprimir();
-        f.avanzarDia();
-        f.imprimir();
+    ejemploFecha f = new ejemploFecha(31,12,2001);
+    ejemploFecha f2 = new ejemploFecha(11,1,2000);
+    //System.out.println(f.esVerano());
+    //System.out.println(diasDelMes(4, 2024));
+    //System.out.println(f.antesQue(f2));
+    f.imprimir();
+    f.avanzarDia();
+    f.imprimir();
+
     }
 
+    public int getDia() {
+        return dia;
+    }
 
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
 }
 
