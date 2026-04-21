@@ -9,6 +9,10 @@ public class Carta {
         numero = n;
     }
 
+    void mostrarCarta(){
+        String[] palos = {"Basto", "Copa", "Espada", "Oro"};
+        System.out.println(this.numero + " de " + palos[this.palo]);
+    }
     static void main() {
 
     }

@@ -1,5 +1,7 @@
 package practica1_Objetos;
 
+import java.util.Random;
+
 public class Mazo {
     Carta[] cartas;
 
@@ -36,11 +38,42 @@ public class Mazo {
         return nuevoMazo;
     }
 
+    public void mostrarMazo(){
+        for (int i = 0; i < this.cartas.length; i++) {
+            cartas[i].mostrarCarta();
+        }
+    }
+
+
+    public void mezclarMazo(){
+        Carta aux = new Carta(0,0);
+        for(int i = 0; i < this.cartas.length; i++){
+            aux.numero = this.cartas[i].numero;
+            aux.palo = this.cartas[i].palo;
+            Random rnd = new Random();
+            int posRnd = rnd.nextInt(0,40);
+            cartas[i].numero = cartas[posRnd].numero;
+            cartas[i].palo = cartas[posRnd].palo;
+            cartas[posRnd].numero = aux.numero;
+            cartas[posRnd].palo = aux.palo;
+        }
+    }
 
     static void main() {
         Mazo mazo = new Mazo();
         Mazo copiaMazo = mazo.copiar();
-        System.out.println("Carta nro 10 del mazo principal: " + mazo.cartas[9].numero + mazo.cartas[9].palo);
-        System.out.println("Carta nro 10 del mazo copia: " + copiaMazo.cartas[9].numero + copiaMazo.cartas[9].palo);
+        int cartaSeleccionada = 28;
+        System.out.println("Carta nro "+cartaSeleccionada+" del mazo principal: Número " + mazo.cartas[cartaSeleccionada].numero + "; Palo: " + mazo.cartas[cartaSeleccionada].palo);
+
+        System.out.println("Carta nro "+cartaSeleccionada+" del mazo copia: Número " + copiaMazo.cartas[cartaSeleccionada].numero + "; Palo: " + copiaMazo.cartas[cartaSeleccionada].palo);
+
+        System.out.println("La siguiente carta sería: ");
+        mazo.cartas[cartaSeleccionada+1].mostrarCarta();
+
+        mazo.mostrarMazo();
+        mazo.mezclarMazo();
+        System.out.println("Mazo mezclado: ");
+        mazo.mostrarMazo();
+
     }
 }
