@@ -33,16 +33,18 @@ public class Punto {
 
 	// ======== ITEM E ==========
 
+	static double distancia(Punto p1, Punto p2){
+		return Math.sqrt( Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+	}
 
-
-	// ======== ITEM F ==========
 
 	public static void main(){
-		Punto p1 = new Punto(4.5, 5.92);
+		Punto p1 = new Punto(10, 10);
+		Punto p2 = new Punto(25, 10);
 		p1.imprimir();
-		p1.desplazar(10,10);
-		p1.imprimir();
- ;
+		p2.imprimir();
+		System.out.println(distancia(p1,p2));
+
 	}
 
 
