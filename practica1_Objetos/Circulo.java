@@ -4,18 +4,40 @@ public class Circulo{
 	double radio;
 	Punto centro;
 
+	// ======== ITEM A ==========
+
 	Circulo(double centro_x, double centro_y, double radio){
 		this.centro = new Punto(centro_x,centro_y);
 		this.radio = radio;
 	}
 
+	// ======== ITEM B ==========
+
 	void imprimir(){
 		System.out.println("Centro x: "+this.centro.x + " | Centro y: "+ this.centro.y + " | Radio: "+ this.radio);
 	}
 
+	// ======== ITEM C ==========
+
 	double perimetro(){
-		return 0; // ========== SEGUIR ACA
+		return this.radio*2*Math.PI;
 	}
+
+	double superficie(){
+		return Math.pow(this.radio*2, 2)*Math.PI;
+	}
+
+	// ======== ITEM D ==========
+
+	void escalar(double factor){
+		this.radio = this.radio * factor;
+	}
+
+	// ======== ITEM E ==========
+
+	// ======== ITEM F ==========
+
+
 
 
 	public static void main(){
